@@ -1,1 +1,3 @@
-# test_issues_form
+# README
+
+This is a temporary repository for testing Github issues forms
