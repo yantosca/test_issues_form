@@ -1,5 +1,5 @@
 name: Bug or Issue Report
-description: Report a bug or issue with GEOS-Chem
+description: Report a GCHP bug or issue with GCHP
 title: "Put a one-line description here"
 labels: ["category: Bug"]
 body:
@@ -33,20 +33,20 @@ body:
     id: log-files
     attributes:
       label: Please attach any relevant configuration and log files.
-      description: Drag and drop files like the GEOS-Chem log file, geoschem_config.yml, HEMCO_Config.rc, HISTORY.rc, and build_info/summarize_build here. You may need to rename files to end in .txt first.
+      description: Drag and drop files like the GCHP log files, ExtData.rc, setCommonRunSettings.sh here. You may need to rename files to end in .txt first.
     validations:
       required: false
   - type: input
     id: version
     attributes:
-      label: What GEOS-Chem version were you using?
+      label: What GCHP version were you using?
       placeholder: e.g. 14.4.0
     validations:
       required: true
   - type: dropdown
     id: machine
     attributes:
-      label: What environment were you running GEOS-Chem on?
+      label: What environment were you running GCHP on?
       multiple: true
       options:
         - Local cluster
@@ -62,6 +62,13 @@ body:
       placeholder: e.g. gcc 10.2.0, ifort 19.0.5.281
     validations:
       required: true
+  - type: input
+    id: mpi-version
+    attributes:
+      label: What MPI library and version were you using?
+      placeholder: e.g. OpenMPI 4.1.0
+    validations:
+      required: true
   - type: dropdown
     id: implemenation
     attributes:
@@ -72,60 +79,6 @@ body:
         - "Yes"
         - "Yes, but I will need some help"
         - "No"
-    validations:
-      required: true
-  - type: dropdown
-    id: configuration
-    attributes:
-      label: In what configuration were you running GEOS-Chem?
-      multiple: false
-      options:
-        - GCClassic
-        - GCHP
-        - CESM
-        - WRF-GC
-        - Other (please explain in additional information section below)
-    validations:
-      required: true
-  - type: dropdown
-    id: simulation
-    attributes:
-      label: What simulation were you running?
-      description: If using full chemistry, specify extra options like benchmark, complexSOA, etc. in the additional information section below
-      multiple: false
-      options:
-        - Full chemistry
-        - Aerosol
-        - Carbon 
-        - Hg
-        - POPs
-        - TagO3
-        - TransportTracers
-        - Trace metals
-        - CH4
-        - CO2
-        - TagCO
-    validations:
-      required: true
-  - type: input
-    id: resolution
-    attributes:
-      label: As what resolution were you running GEOS-Chem?
-      description: If running a nested grid simulation, please also specify the region.
-      placeholder: "e.g. 4x5, 2x2.5, 0.25x0.3125 NA, c48, c180"
-    validations:
-      required: true
-  - type: dropdown
-    id: meteorology
-    attributes:
-      label: What meterology fields did you use?
-      multiple: false
-      options:
-        - GEOS-FP
-        - GEOS-IT
-        - MERRA-2
-        - GCAP 2.0
-        - Other (please explain in additional information section below)
     validations:
       required: true
   - type: textarea
