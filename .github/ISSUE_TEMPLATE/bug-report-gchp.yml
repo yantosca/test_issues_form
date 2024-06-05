@@ -30,6 +30,13 @@ body:
     validations:
       required: true
   - type: textarea
+    id: what-did-you-do-to-understand
+    attributes:
+      label: What steps have you taken to understand the issue?
+      placeholder: e.g. Looked at similar GitHub issues, Read the debugging info on ReadTheDocs, etc.
+    validations:
+      required: true
+  - type: textarea
     id: log-files
     attributes:
       label: Please attach any relevant configuration and log files.
